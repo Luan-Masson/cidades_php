@@ -1,3 +1,10 @@
+## Rodando o projeto: 
+<p>Para rodar o projeto siga os seguintes passos:</p>
+<ol>
+  <li>Clone o projeto dentro da pasta htdocs do xampp</li>
+  <li>Abra o phpmyadmin e importe o arquivo teste.sql</li>
+  <li>Inicie o projeto pelo xampp control</li>
+</ol>
 <h2>Navegação:</h2> 
 <ul>
   <li>No formulário index.php, o título ficou Bicicletaria Imaginária, deveria ser Gerenciamento de Cidades</li>
