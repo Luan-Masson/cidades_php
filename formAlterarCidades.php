@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Bicicletaria Imaginária </title>
+    <title>Gerenciamento de Cidades </title>
 </head>
 <body>
     <img src="imagens/logoCidade.jpeg" width="150" height="100"><b>
@@ -117,6 +117,6 @@
     <b><a href='menuPesquisarCidades.php'><b>Voltar para a Pesquisa de Cidades</a><br/>
     <b><a href='menuGerCidades.php'><b>Voltar para o menu de Opções Gerenciamento de Cidades</a><br/>
     <b><a href='menuOpcoesGeral.php'><b>Voltar para o menu de Opções Gerais</a><br/>
-    <b><a href='sair.php'><b>Sair do Sistema IPIL</a></font></div>
+    <b><a href='sair.php'><b>Sair do Sistema Cidades</a></font></div>
 </body>
 </html>

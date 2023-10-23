@@ -8,7 +8,7 @@
 ?>
 <html>
       <head> 
-             <!-- Função que vai deixar todos os caracteres maiúsculos->
+             <!-- Função que vai deixar todos os caracteres maiúsculos -->
             <Style type="text/css">
                     input.maiuscula
                     {
@@ -109,6 +109,6 @@
           <b><a href='formExcluirCidades.php'><b>Voltar Para Exclusão de Cidades</a><br>
           <b><a href='menuGerCidades.php'>Voltar para o menu de Opções Gerenciamento de Cidades</a><br>
           <b><a href='menuOpcoesGeral.php'>Voltar para o menu de Opções Geral</a><br>
-          <b><a href='sair.php'>Sair do Sistema IPIL</a></font></div></p>
+          <b><a href='sair.php'>Sair do Sistema Cidades</a></font></div></p>
        </body>
 </html>

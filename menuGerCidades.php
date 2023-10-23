@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicicletaria Imaginária </title>
+    <title>Gerenciamento de Cidades </title>
 </head>
 <body>
     <img src="imagens/logoCidade.jpeg" width="150" height="100"><b>
@@ -45,10 +45,7 @@
     </table><br/>
     <div align="center"><font face="Arial" size="2">
         <a href='menuOpcoesGeral.php'><b>Voltar para o menu de Opções Gerais</a><br/>
-        <a href="menuGerUsuAdm.php"><b>Voltar para o menu de Gerenciamento de Usuários Administrativos</a><br/>
-        <a href="menuGerProdutos.php"><b>Voltar para o menu de Gerenciamento de Produtos</a><br/>
-        <a href="menuGerVendas.php"><b>Voltar para o menu de Gerenciamento de Vendas</a><br/>
-        <a href='sair.php'><b>Sair do Sistema IPIL</a></font>
+        <a href='sair.php'><b>Sair do Sistema Cidades</a></font>
     </div>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicicletaria Imaginária </title>
+    <title>Gerenciamento de Cidades </title>
 </head>
 <body>
     <img src="imagens/logoCidade.jpeg" width="150" height="100"><b>
@@ -42,5 +42,5 @@
     </table>
 </body><br/>
     <div align="center"><font face="Arial" size="2">
-    <a href='sair.php'>Sair do Sistema IPIL</a></font></div>
+    <a href='sair.php'>Sair do Sistema Cidades</a></font></div>
 </html>
