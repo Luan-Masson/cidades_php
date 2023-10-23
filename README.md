@@ -18,9 +18,12 @@ tem necessidade dos links:</li>
     </ul>
   <li>No formulário formIncluirCidades.php, o link Sair do Sistema IPIL, deveria ser: Sair do Sistema Cidades, e
 não tem necessidade dos links:
-Voltar para o menu de Gerenciamento de Usuários Administrativos
-Voltar para o menu de Gerenciamento de Produtos
-Voltar para o menu de Gerenciamento de Vendas</li>
+    <ul>
+      <li>Voltar para o menu de Gerenciamento de Usuários Administrativos</li>
+      <li>Voltar para o menu de Gerenciamento de Produtos</li>
+      <li>Voltar para o menu de Gerenciamento de Vendas</li>
+    </ul>
+</li>
   <li>No formulário formAlterarCidades.php, o link para Exclusão não funciona, o link Sair do Sistema IPIL, deveria
 ser: Sair do Sistema Cidades</li>
   <li>No formulário menuGerCidades.php, o link do menu Excluir não funciona</li>
