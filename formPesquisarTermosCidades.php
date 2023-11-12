@@ -1,71 +1,65 @@
 <?php
-    require_once("includes/conectarBD.php");
-     //Vai verificar se a nossa sessão esta ativa
-     require_once("verificar.php");
-          //Função que vai exibir a data completa, dia e ano corrente
-     include 'includes/exibirDia.fcn';
+    //Verificará se a nossa sessão está ativa
+    require_once("verificar.php");
+    //A função que exibirá a data completa, dia e ano corrente
+    include 'includes/exibirDia.fcn';
+    include 'includes/cabecalho.php';
 ?>
-<html>
-<body>
-    <img src="imagens/logoCidade.jpeg" width="150" height="100"><b>
-    <?php
-        //Exibirá o nome do usuário que está logado e a data corrente
-        echo "O usuário " .$_SESSION['sessaoNome']." está logado no sistema neste momento !!!! Hoje é ".$data;
-    ?></b><br/><br/>
+<div class="nav-bar-fixed">
+    <nav>
+        <div class="nav-wrapper blue lighten-1">
+            <a href="menuGerCidades.php" class="brand-logo" style="margin-left: 0.5em;">Menu de Opções</a>
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="navbar-itens" class="right hide-on-med-and-down">
+                <li><a href="formAlterarCidades.php">Alterar</a>
+                <li><a href="formIncluirCidades.php">Incluir</a>
+                <li><a href="formExcluirCidades.php">Excluir</a>
+                <li><a href="menuPesquisarCidades.php">Pesquisar</a>
+                <li><a class="dropdown-trigger" data-target="dropdown">Voltar<i class="material-icons">arrow_drop_down</i></a></li>
+            </ul>
+        </div> 
+    </nav>
+</div>
+<ul id="dropdown" class="dropdown-content">
+        <li><a href="menuGerCidades.php"><i class="material-icons left">person_pin</i>Gerenciamento de Cidades</a></li>
+        
+</ul>    
+<ul id="mobile-navbar" class="sidenav">
+    <li><a href="formAlterarCidades.php"><i class="material-icons left">done</i>Alterar</a>
+    <li><a href="formIncluirCidades.php"><i class="material-icons left">assignment_turned_in</i>Incluir</a>
+    <li><a href="formExcluirCidades.php"><i class="material-icons left">delete</i>Excluir</a>
+    <li><a href="menuPesquisarCidades.php"><i class="material-icons left">search</i>Pesquisar</a>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="menuGerCidades.php"><i class="material-icons left">person_pin</i>Gerenciamento de Cidades</a></li>
+        
+</ul>
+<div>
     <table width="60%" border="0" cellspacing="0" cellpadding="0" align="center">
-    <tr>
-        <td height="60"><div align="center"><font face="Arial" size="4"><b>Gerenciamento de Cidades</b></font></div></td>
-    </tr>
-    </table><br>
-<?php
-     //A formatação do campo cidDtInclusao, para retornar a data no formato dd/MM/yyyy
-     $sqlCidade = mysqli_query($conexao,"SELECT * FROM cidades".
-     //Ordena pelo número do código do cidente
-     " ORDER BY cidID") or die ("Não foi possível realizar a consulta.");
-?>
-<?php
-     //Se encontrar algum registro na tabela
-     if(mysqli_num_rows($sqlCidade) > 0)
-     {
-?>
-        <table width="100%" border="0" cellspacing="1" cellpadding="0" align="center">
         <tr>
-            <td colspan="15"><div align="center"><font face="Arial" size="2"><b>Cidades Cadastrados</font></b></font></div></td>
-        <tr>
-        <td colspan="15"><div align="center"><font face="Arial" size="2"><b>Utilize as Teclas Ctlr+F para Encontrar o Código ou Nome do Cidade</font></b></font></div></td>
+            <td height="60"><div align="center"><font face="Arial" size="4"><b>Pesquisar por Código, Nome ou CEP das Cidades </b></font></div></td>
         </tr>
-        <tr><td width="5%"><div align="center"><b><font face="Arial" size="2">Código do Cidade</font></b></div></td>
-            <td width="10%"><div align="center"><b><font face="Arial" size="2">Nome da Cidade</font></b></div></td>
-            <td width="10%"><div align="center"><b><font face="Arial" size="2">CEP</font></b></div></td>
-        </tr>
+    </table>      
+    <form method="POST" action="resultadoPesquisarTermosCidades.php">                
+        <div class = "container" style="margin-top: 100px">
+        <b>Selecione Código, Nome ou CEP de Cidade:<br>
+        <select name="cidItemPesquisa">
+            <option value="cidID"><b>Código</option>    
+            <option value="cidNome"><b>Nome</option>
+            <option value="cidCep"><b>CEP</option>
+            </select><br/><br/>
+            <div class = "col s12">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">keyboard</i>
+                    <input type="text" name="cidTermoPesquisa" required>
+                    <label for="cidTermoPesquisa">Digite um Termo Conforme Item Escolhido Acima</label>
+                </div>
+            <b></br>
+            <button type="submit" class="waves-effect waves-light btn-large blue lighten-1" name="pesqCidade" value="Pesquisar"><i class="material-icons left">assignment_ind</i>Pesquisar Cidade</button>
+        </div>               
+    </form>
+<div class = "col s12 center">
+    <br><a href="sair.php" class="waves-effect waves-light btn-large blue lighten-1"><i class="material-icons left">logout</i>Sair do Sistema Cidades</a>
+</div>
 <?php
-        //Lista os dados da tabela enquanto exisitir
-        while($arrayCidade = mysqli_fetch_array($sqlCidade))
-        {
+    include_once 'includes/rodape.php';
 ?>
-        <tr>
-            <td width="10%" height="25"><b><font face="Arial" size="2"><?php echo $arrayCidade['cidID'];?></font></td>
-            <td width="20%" height="25"><b><font face="Arial" size="2"><?php echo $arrayCidade['cidNome'];?></font></td>
-            <td width="10%" height="25"><b><font face="Arial" size="2"><?php echo $arrayCidade['cidCep'];?></font></td>
-        </tr>
-<?php
-        //Fecha a execução do comando mysqli_fetch_array
-        }
-?>
-        </table>
-<?php
-     }//Fecha a execução do comando mysqli_num_rows > 0
-     else
-     {
-         echo "<br><br><div align=center><font face=Arial size=2>Desculpe, mais não foram encontrados nenhum cidente<br><br></font></div>";
-     }
-?>
-     <br><div align="center"><font face="Arial" size="2">
-     <b><a href='menuPesquisarCidades.php'><b>Voltar Para o Menu Pesquisar Cidades</a><br>     
-     <a href='formAlterarCidades.php'><b>Voltar Para Alteração de Cidades</a><br>
-     <a href='formExcluirCidades.php'><b>Voltar Para Exclusão de Cidades</a><br>
-     <a href='menuGerCidades.php'><b>Voltar para o menu de Opções Gerenciamento de Cidades</a><br>
-     <a href='menuOpcoesGeral.php'><b>Voltar para o menu de Opções Geral</a><br>
-     <a href='sair.php'><b>Sair do Sistema </a></font></div>
-     </body>
-</html>

@@ -1,51 +1,79 @@
 <?php
-    //Verificará se a nossa sessão está ativa
-    require_once("verificar.php");
-    //A função que exibirá a data completa, dia e ano corrente
-    include 'includes/exibirDia.fcn';
+//Verificará se a nossa sessão está ativa
+require_once("verificar.php");
+//A função que exibirá a data completa, dia e ano corrente
+include 'includes/exibirDia.fcn';
+include 'includes/cabecalho.php';
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Cidades </title>
-</head>
-<body>
-    <img src="imagens/logoCidade.jpeg" width="150" height="100"><b>
+<div class="nav-bar-fixed">
+    <nav>
+        <div class="nav-wrapper blue lighten-1">
+            <a href="menuGerCidades.php" class="brand-logo" style="margin-left: 0.5em;">Menu de Opções</a>
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="navbar-itens" class="right hide-on-med-and-down">
+                <li><a href="formAlterarCidades.php">Alterar</a>
+                <li><a href="formExcluirCidades.php">Excluir</a>
+                <li><a href="menuPesquisarCidades.php">Pesquisar</a>
+                <li><a class="dropdown-trigger" data-target="dropdown">Voltar<i
+                            class="material-icons">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul id="dropdown" class="dropdown-content">
+    <li><a href="menuGerCidades.php"><i class="material-icons left">person_pin</i>Gerenciamento de Cidades</a></li>
+
+</ul>
+<ul id="mobile-navbar" class="sidenav">
+    <li><a href="formAlterarCidades.php"><i class="material-icons left">done</i>Alterar</a>
+    <li><a href="formExcluirCidades.php"><i class="material-icons left">delete</i>Excluir</a>
+    <li><a href="menuPesquisarCidades.php"><i class="material-icons left">search</i>Pesquisar</a>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="menuGerCidades.php"><i class="material-icons left">person_pin</i>Gerenciamento de Cidades</a></li>
+</ul>
+<div>
     <?php
-        //Exibirá o nome do usuário que está logado e a data corrente
-        echo "O usuário " .$_SESSION['sessaoNome']." está logado no sistema neste momento !!!! Hoje é ".$data;
-    ?></b><br/><br/>
+    //Exibirá o nome do usuário que está logado e a data corrente
+    echo "O usuário " . $_SESSION['sessaoNome'] . " está logado no sistema neste momento !!!! Hoje é " . $data;
+    ?></b><br /><br />
     <table width="60%" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
-            <td height="60"><div align="center"><font face="Arial" size="4"><b>Cadastro de Cidades </b></font></div></td>
+            <td height="60">
+                <div align="center">
+                    <font face="Arial" size="4"><b>Cadastro de Cidades</b></font>
+                </div>
+            </td>
         </tr>
-    </table>    
-    <form name="formCidades" id="formCidades" method="POST" action="incluirCidades.php">
-    <table width="35%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-            <td width="24%" height="25">Nome:</td>
-            <td height="25" width="76%"><input type="text" name="cidNome" required></td>
-        </tr>
-        <tr>
-            <td width="24%" height="25">Cep:</td>
-            <td height="25" width="76%"><input name="cidCep" type="text" max="99999999" maxlength="8" id="CEP" required/></td>
-        </tr>
-    <tr>
-    <td height="25" colspan="2">
-        <div>
-                <input type="submit" name="cadCidade" value="Cadastrar Cidade">
-        </div></td>
-    </tr>
     </table>
+    <form name="formCidades" id="formCidades" method="POST" action="incluirCidades.php">
+        <div class="container" style="margin-top: 100px">
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">keyboard</i>
+                        <input type="text" name="cidNome" required>
+                        <label for="cidNome">Nome:</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">location_on</i>
+                        <input type="text" name="cidCep" maxlength="9" required>
+                        <label for="cidCep">CEP:</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div align="center">
+            <button type="submit" class="waves-effect waves-light btn-large blue lighten-1" name="cadCidade"
+                value="Cadastrar Cidade"><i class="material-icons left">assignment_ind</i>Cadastrar Cidade</button>
+            </br></br>
+            <a href="sair.php" class="waves-effect waves-light btn-large blue lighten-1"><i
+                    class="material-icons left">logout</i>Sair do Sistema Cidades</a>
+        </div>
     </form>
-</body>
-    <div align="center">
-        <a href='menuGerCidades.php'>Voltar para o menu de Opções Gerenciamento de Cidades</a><br/>
-        <a href='menuOpcoesGeral.php'>Voltar para o menu de Opções Gerais</a><br/>
-        <a href='sair.php'>Sair do Sistema Cidades</a>
-    </div>
-</body>
-</html>
+    <?php
+    include_once 'includes/rodape.php';
+    ?>

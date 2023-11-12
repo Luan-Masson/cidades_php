@@ -1,8 +1,11 @@
 <?php
+    //INICIALIZA A SESSÃO
     session_start();
 
+    //DESTROI AS VARIÁVEIS
     unset($_SESSION['sessaoID']);
-    unset($_SESSIO['sessaoNome']);
+    unset($_SESSION['sessaoNome']);
 
-    Header("Location: index.php")
+    //REDIRECIONA PARA A TELA DE LOGIN
+    Header("Location: index.php");
 ?>

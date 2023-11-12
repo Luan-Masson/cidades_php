@@ -1,28 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Cidades </title>
-</head>
-<body>
-    <img src="imagens/logoCidade.jpeg" width="150" height="100">
-    <form name="formAutentica" method="post" action="autenticar.php">
-    <table border="0" cellpadding="0" cellspacing="3" width="50%">
-        <tr>
-            <td width="1%">Usuário:</td>
-            <td width="40%"><input type="text" name="indexUsuario" size="25" required></td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <td width="1%">Senha:</td>
-            <td width="40%"><input type="password" name="indexSenha" size="10" required></td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center"><input type="submit" name="btnEntrar" value="Entrar no Sistema"></td>
-        </tr>
-    </table>
-    </form>
-</body>
-</html>
+<?php
+    include_once 'includes/cabecalho.php';
+    include_once 'includes/imagem.php'
+?>
+<div class="row">
+   <div class="col s12 m6 push-m3">
+      <form name="formAutentica" method="post" style="display: flex; justify-content:center;" action="autenticar.php">
+         <div class="input-field">
+            <i class="material-icons prefix">account_circle</i>
+            <input type="text" class="validate" name="indexUsuario" required>
+            <label for="indexUsuario">Usuário</label>
+            <div class="row">
+               <div class="input-field col s12">
+                  <i class="material-icons prefix">password</i>
+                  <input type="password" class="validate" name="indexSenha" required>
+                  <label for="indexSenha">Senha</label>
+               </div>
+            </div>
+            <div class="row" align="center">
+               <div class="input-field col s12">
+                  <button class="btn waves-effect waves-light" type="submit" name="btnEntrar" >Entrar no Sistema Cidades<i class="material-icons right">send</i>
+                   </button>
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
+<?php
+    include_once 'includes/rodape.php';
+?>

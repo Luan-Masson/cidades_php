@@ -1,51 +1,43 @@
 <?php
-    //Verificará se a nossa sessão está ativa
-    require_once("verificar.php");
-    //A função que exibirá a data completa, dia e ano corrente
-    include 'includes/exibirDia.fcn';
+//Verificará se a nossa sessão está ativa
+require_once("verificar.php");
+//A função que exibirá a data completa, dia e ano corrente
+include 'includes/exibirDia.fcn';
+include 'includes/cabecalho.php';
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Cidades </title>
-</head>
-<body>
-    <img src="imagens/logoCidade.jpeg" width="150" height="100"><b>
+<div class="nav-bar-fixed">
+    <nav>
+        <div class="nav-wrapper blue lighten-1">
+            <a href="menuGerCidades.php" class="brand-logo" style="margin-left: 0.5em;">Menu de Opções</a>
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="navbar-itens" class="right hide-on-med-and-down">
+                <li><a href="formIncluirCidades.php">Incluir</a>
+                <li><a href="formAlterarCidades.php">Alterar</a>
+                <li><a href="formExcluirCidades.php">Excluir</a>
+                <li><a href="menuPesquisarCidades.php">Pesquisar</a>
+                <li><a href="relatorioCidades.php">Relatorio de Cidades PDF</a>
+                <li><a class="dropdown-trigger" data-target="dropdown">Voltar<i
+                            class="material-icons">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul id="dropdown" class="dropdown-content">
+    <li><a href="menuGerCidades.php"><i class="material-icons left">apartment</i>Gerenciamento de Cidades</a></li>
+    <li><a href="menuOpcoesGeral.php"><i class="material-icons left">computer</i>Menu Opções Geral</a></li>
+</ul>
+<ul id="mobile-navbar" class="sidenav">
+    <li><a href="formIncluirCidades.php"><i class="material-icons left">assignment_turned_in</i>Incluir</a>
+    <li><a href="formAlterarCidades.php"><i class="material-icons left">done</i>Alterar</a>
+    <li><a href="formExcluirCidades.php"><i class="material-icons left">delete</i>Excluir</a>
+    <li><a href="menuPesquisarCidades.php"><i class="material-icons left">search</i>Pesquisar</a>
+    <li><a href="relatorioCidades.php"><i class="material-icons left">print</i>Relatorio de Cidades PDF</a>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="menuGerCidades.php"><i class="material-icons left">apartment</i>Gerenciamento de Cidades</a></li>
+
+    <li><a href="menuOpcoesGeral.php"><i class="material-icons left">computer</i>Menu Opções Geral</a></li>
+</ul>
+<div>
     <?php
-        //Exibirá o nome do usuário que está logado e a data corrente
-        echo "O usuário " .$_SESSION['sessaoNome']." está logado no sistema neste momento !!!! Hoje é ".$data;
-    ?></b><br/><br/>
-    <table width="55%" cellspacing="0" cellpadding="0" border="0">
-        <tr>
-            <td>
-                <table width="130%" cellspacing="0" cellpadding="0" border="0">
-                    <tr>
-                        <td width="130%"><font color="#3300FF"><b>Gerenciamento de Cidades</font></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-            <tr>
-                <td nowrap>
-                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                        <tr>
-                            <ol type="I" start="1"><br/>
-                                <li><a href="formIncluirCidades.php"><font color="#3300FF"><b>Incluir</font></a>
-                                <li><a href="formAlterarCidades.php"><font color="#3300FF"><b>Alterar</font></a>
-                                <li><a href="formExcluirCidades.php"><font color="#3300FF"><b>Excluir</font></a>
-                                <li><a href="menuPesquisarCidades.php"><font color="#3300FF"><b>Pesquisar</font></a>
-                            </ol>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-    </table><br/>
-    <div align="center"><font face="Arial" size="2">
-        <a href='menuOpcoesGeral.php'><b>Voltar para o menu de Opções Gerais</a><br/>
-        <a href='sair.php'><b>Sair do Sistema Cidades</a></font>
-    </div>
-</body>
-</html>
+    include_once 'includes/rodape.php';
+    ?>

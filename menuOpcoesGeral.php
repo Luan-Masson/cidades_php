@@ -3,44 +3,34 @@
     require_once("verificar.php");
     //A função que exibirá a data completa, dia e ano corrente
     include 'includes/exibirDia.fcn';
+    include 'includes/cabecalho.php';
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Cidades </title>
-</head>
-<body>
-    <img src="imagens/logoCidade.jpeg" width="150" height="100"><b>
-    <?php
-        //Exibirá o nome do usuário que está logado e a data corrente
-        echo "O usuário " .$_SESSION['sessaoNome']." está logado no sistema neste momento !!!! Hoje é ".$data;
-    ?></b><br/><br/>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tr>
-            <td>
-            <table width="83%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td width="30%"><font color="#3300FF"><b>Menu de
-                    Opções</font></td>
-                </tr>
-            </table></td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <table width="10%" cellspacing="0" cellpadding="0" border="0">
-                    <tr><a href="form_Cidades.php"><font color="#3300FF"><b>
-                        <ol type="I" start="1">
-                            <li><a href="menuGerCidades.php"><font color="#3300FF"><b>Gerenciamento de Cidades</font></a>
-                        </ol>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-</body><br/>
-    <div align="center"><font face="Arial" size="2">
-    <a href='sair.php'>Sair do Sistema Cidades</a></font></div>
-</html>
+    <div class="nav-bar-fixed">
+        <nav>
+            <div class="nav-wrapper blue lighten-1">
+                <a href="menuGerCidades.php" class="brand-logo" style="margin-left: 0.5em;">
+                    <i class="material-icons">apartment</i>Menu de Opções</a>
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="navbar-itens" class="right hide-on-med-and-down">
+                    <li><a href="menuGerCidades.php">Gerenciamento de Cidades</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="menuGerCidades.php"><i class="material-icons left">apartment</i>Gerenciamento de Cidades</a></li>
+    </ul>
+    <div>
+        <?php
+            //Exibirá o nome do usuário que está logado e a data corrente
+            echo "O usuário " .$_SESSION['sessaoNome']." está logado no sistema neste momento !!!! Hoje é ".$data;
+        ?>
+    </div>
+    </b><br/><br/>
+    <?php include_once 'includes/imagem.php'; ?>
+    <div align="center" style="margin:1em;">
+        <a href="sair.php" class="waves-effect waves-light btn-large blue lighten-1"><i class="material-icons left">logout</i>Sair do Sistema de Cidades</a>
+    </div>
+<?php
+    include_once 'includes/rodape.php';
+?>
