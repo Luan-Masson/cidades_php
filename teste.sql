@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23/10/2023 às 14:28
+-- Tempo de geração: 12/11/2023 às 04:46
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cidade` (
   `cidID` int(11) NOT NULL,
   `cidNome` varchar(255) NOT NULL,
-  `cidCep` varchar(8) NOT NULL
+  `cidCep` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
